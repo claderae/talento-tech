@@ -1,0 +1,235 @@
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('https://fonts.gstatic.com/s/plusjakartasans/v8/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+}
+
+.nav-header ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-header ul li {
+    margin: 0 15px;
+}
+
+.nav-header a {
+    color: gray;
+    text-decoration: none;
+}
+
+.nav-header a:hover {
+    color: #59b10f;
+}
+
+.icon img {
+    height: 24px;
+    vertical-align: middle;
+}
+
+main {
+    padding: 80px 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner-container {
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.banner-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #59b10f;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #417438;
+}
+
+#productos {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.producto {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    flex: 1 1 100%; /* Por defecto, ocupa todo el ancho */
+}
+
+.producto-imagen {
+    width: 100%; /* La imagen ocupa el 100% del ancho del artículo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados, opcional */
+}
+
+/* Para pantallas grandes */
+@media (min-width: 768px) {
+    .producto {
+        flex: 1 1 calc(30% - 20px); /* Cada imagen ocupa 1/5 del ancho de la pantalla */
+    }
+}
+
+/* Para pantallas medianas */
+@media (min-width: 480px) and (max-width: 767px) {
+    .producto {
+        flex: 1 1 calc(30% - 20px); /* Cada imagen ocupa 1/3 del ancho de la pantalla */
+    }
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto h3 {
+    color: #333;
+}
+
+.producto p {
+    color: #666;
+}
+
+#contacto form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#contacto label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #333; /* Bordes en gris */
+    border-radius: 4px;
+}
+
+textarea {
+    height: 100px; /* Altura del área de texto */
+}
+
+button {
+    background-color: #59b10f; /* Botón en verde */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #4cae10; /* Cambio de color al pasar el mouse */
+}
+
+#reseñas {
+    background: #f9f9f9; /* Fondo ligero para la sección */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.reseñas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Mínimo 250px, se adapta al espacio */
+    gap: 20px; /* Espacio entre las reseñas */
+}
+
+.reseña {
+    background: white; /* Fondo blanco para cada reseña */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}

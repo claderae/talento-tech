@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tienda E-commerce</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo de la tienda">
+        </div>
+        <nav class="nav-header">
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#carrito" class="icon"><img src="images/carrito-icon.png" alt="Carrito"></a></li>
+                <li><a href="#login" class="icon"><img src="images/login-icon.png" alt="Acceder"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="banner-container">
+        <img src="images/fondo1.jpg" alt="Banner" class="banner-image">
+        <div class="banner-text">
+            <h2>¡Llená tu despensa con nuestros productos!</h2>
+            <div class="banner-buttons">
+                <a href="#conocer-mas" class="btn">¡Conoce más!</a>
+                <a href="#hacer-pedido" class="btn">¡Hacé tu pedido ahora!</a>
+            </div>
+        </div>
+    </div>
+    <main>
+        <img src="images/logo.png" alt="Logo de la tienda" style="height: 50px;">
+        <section id="novedades">
+            <h2>Alimentos ¡Super ricos! con total comodidad</h2>
+            <article>
+                <p>Vida Saludable nace de la necesidad de crear un mundo más consciente y conectado.
+Somos una dietética online dedicada a ofrecerte alimentos saludables a un excelente precio y calidad en todo el país.
+Porque cada decisión que tomamos importa, y porque cada acción tiene su propio impacto, creamos una plataforma online para vender y comprar productos de manera accesible, fácil y rápida.
+Tenemos el poder de transformar el mundo y conectados expandimos la conciencia.
+                </p>
+            </article>
+        </section>
+        <section id="productos">
+            <h2>Productos Destacados</h2>
+            <div class="productos-container">
+                <article class="producto">
+                    <img src="images/producto1.png" alt="Producto 1" class="producto-imagen">
+                    <h3>Producto 1</h3>
+                    <p>Descripción del producto 1.</p>
+                    <p>Precio: $10.00</p>
+                    <a href="#comprar" class="btn">Comprar</a>
+                </article>
+                <article class="producto">
+                    <img src="images/producto2.png" alt="Producto 2" class="producto-imagen">
+                    <h3>Producto 2</h3>
+                    <p>Descripción del producto 2.</p>
+                    <p>Precio: $15.00</p>
+                    <a href="#comprar" class="btn">Comprar</a>
+                </article>
+                <article class="producto">
+                    <img src="images/producto3.png" alt="Producto 3" class="producto-imagen">
+                    <h3>Producto 3</h3>
+                    <p>Descripción del producto 3.</p>
+                    <p>Precio: $15.00</p>
+                    <a href="#comprar" class="btn">Comprar</a>
+                </article>
+                <article class="producto">
+                    <img src="images/producto4.png" alt="Producto 4" class="producto-imagen">
+                    <h3>Producto 4</h3>
+                    <p>Descripción del producto 2.</p>
+                    <p>Precio: $15.00</p>
+                    <a href="#comprar" class="btn">Comprar</a>
+                </article>
+                <article class="producto">
+                    <img src="images/producto5.png" alt="Producto 5" class="producto-imagen">
+                    <h3>Producto 5</h3>
+                    <p>Descripción del producto 2.</p>
+                    <p>Precio: $15.00</p>
+                    <a href="#comprar" class="btn">Comprar</a>
+                </article>
+                <article class="producto">
+                    <img src="images/producto6.png" alt="Producto 6" class="producto-imagen">
+                    <h3>Producto 6</h3>
+                    <p>Descripción del producto 2.</p>
+                    <p>Precio: $15.00</p>
+                    <a href="#comprar" class="btn">Comprar</a>
+                </article>
+            </div>
+        </section>
+        <section id="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>Información sobre la tienda y su misión.</p>
+        </section>
+        <section id="reseñas">
+            <h2>Reseñas de Clientes</h2>
+            <div class="reseñas-container">
+                <div class="reseña">
+                    <h3>Juan Pérez</h3>
+                    <p>Excelente servicio y productos de alta calidad. ¡Recomendado!</p>
+                </div>
+                <div class="reseña">
+                    <h3>María López</h3>
+                    <p>Me encantó la variedad de productos saludables. Volveré a comprar.</p>
+                </div>
+                <div class="reseña">
+                    <h3>Pedro García</h3>
+                    <p>Los precios son muy competitivos y la entrega fue rápida.</p>
+                </div>
+                <div class="reseña">
+                    <h3>Ana Martínez</h3>
+                    <p>Gran experiencia de compra. Todos mis productos llegaron en perfectas condiciones.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="https://formspree.io/f/xwpklyqy"  method="POST">
+            <label>
+                Tu nombre:
+                <input type="text" name="name" required>
+            </label>
+            <label>
+                Tu correo electrónico:
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                N° Pedido (si aplica):
+                <input type="text" name="order_number">
+            </label>
+            <label>
+                Asunto:
+                <input type="text" name="subject" required>
+            </label>
+            <label>
+                Tu mensaje:
+                <textarea name="message" required></textarea>
+            </label>
+            <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tienda E-commerce. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
