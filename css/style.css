@@ -30,9 +30,17 @@ header {
     height: 50px;
 }
 
+#novedades {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados (opcional) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave (opcional) */
+}
+
 .nav-header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav-header ul {
@@ -40,6 +48,7 @@ header {
     padding: 0;
     display: flex;
     align-items: center;
+
 }
 
 .nav-header ul li {
@@ -79,13 +88,14 @@ footer {
 }
 
 .banner-image {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
 .banner-container {
     position: relative;
+    overflow: hidden; /* Para evitar desbordamientos */
+    max-height: 60vh; /* Ajusta el alto máximo según sea necesario */
 }
 
 .banner-text {
@@ -96,10 +106,14 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+    width: 90%; /* Limitar el ancho para que no se desborde en pantallas pequeñas */
 }
 
 .banner-buttons {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: center; /* Centra los botones */
 }
 
 .btn {
@@ -108,7 +122,10 @@ footer {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin: 0 10px;
+    margin: 5px 0; /* Añade un pequeño margen entre los botones */
+    padding: 10px 20px; /* Ajusta el padding según el diseño deseado */
+    width: 100%; /* Asegura que los botones ocupen el ancho completo */
+    max-width: 200px; /* Limitar el ancho máximo para no exceder en pantallas grandes */
     display: inline-block;
     transition: background-color 0.3s ease;
 }
@@ -146,17 +163,51 @@ footer {
     border-radius: 8px; /* Bordes redondeados, opcional */
 }
 
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    font-size: 24px; /* Tamaño del icono */
+    cursor: pointer;
+    margin-left: auto; /* Alineación a la derecha */
+}
+
+@media (max-width: 768px) {
+    .nav-header ul {
+        display: none; /* Ocultar el menú */
+        flex-direction: column; /* Cambiar a columna */
+        position: absolute; /* Posicionarlo fuera del flujo normal */
+        top: 60px; /* Ajustar según el tamaño del header */
+        left: 0;
+        color:#333;
+        background: white; /* Fondo blanco */
+        width: 100%; /* Ancho completo */
+        z-index: 1000; /* Asegurar que se muestre por encima de otros elementos */
+    }
+
+    .nav-header.active ul {
+        display: flex; /* Mostrar menú cuando esté activo */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar botón de menú */
+        background: none; /* Sin fondo */
+        border: none; /* Sin borde */
+        color: #333; /* Cambia este valor al color deseado */
+        font-size: 24px; /* Tamaño del icono */
+        cursor: pointer; /* Cambia el cursor al pasar el mouse */
+        margin-left: auto; /* Alineación a la derecha */
+    }
+
+    .producto {
+        flex: 1 1 calc(30% - 20px); /* Cada imagen ocupa 1/3 del ancho de la pantalla */
+    }
+}
+
 /* Para pantallas grandes */
 @media (min-width: 768px) {
     .producto {
         flex: 1 1 calc(30% - 20px); /* Cada imagen ocupa 1/5 del ancho de la pantalla */
-    }
-}
-
-/* Para pantallas medianas */
-@media (min-width: 480px) and (max-width: 767px) {
-    .producto {
-        flex: 1 1 calc(30% - 20px); /* Cada imagen ocupa 1/3 del ancho de la pantalla */
     }
 }
 
@@ -209,10 +260,11 @@ button {
     font-size: 16px;
     margin-top: 10px;
 }
-
+/*
 button:hover {
-    background-color: #4cae10; /* Cambio de color al pasar el mouse */
+    background-color: #4cae10; 
 }
+*/
 
 #reseñas {
     background: #f9f9f9; /* Fondo ligero para la sección */
