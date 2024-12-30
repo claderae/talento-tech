@@ -1,0 +1,14 @@
+[
+    {
+      "src": "images/producto10.png",
+      "nombre": "Producto 10",
+      "descripcion": "Esta es la descripcion del producto 10.",
+      "precio": 123
+    },
+    {
+      "src": "images/producto21.png",
+      "nombre": "Producto 21",
+      "descripcion": "Esta es la descripcion del producto 21.",
+      "precio": 150
+    }
+  ]
