@@ -9,7 +9,7 @@ fetch('db/productos.json')
     .then(response => response.json())
     .then(productos => {
         // Seleccionamos el contenedor de productos
-        const container = document.getElementById('productos-container');
+        const container = document.querySelector('.productos-container');
         
         // Recorremos cada producto y creamos el HTML correspondiente
         productos.forEach(producto => {
