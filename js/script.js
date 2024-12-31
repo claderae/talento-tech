@@ -5,18 +5,6 @@ menuToggle.addEventListener('click', () => {
     navHeader.classList.toggle('active');
 });
 
-/*
-// Seleccionamos el botón "Comprar" dentro del producto
-const comprarBtn = document.querySelector('a[href="#comprar"]');;
-            
-// Añadimos el evento click al botón
-comprarBtn.addEventListener('click', (event) => {
-    event.preventDefault(); // Evitar el comportamiento por defecto
-    //mostrarNotificacion(`${producto.nombre} ha sido agregado al carrito`);
-    mostrarNotificacion('Ha sido agregado al carrito')
-});
-*/
-
 // Función para mostrar la notificación
 function mostrarNotificacion(mensaje) {
     // Crear el elemento de notificación
@@ -83,19 +71,17 @@ fetch('db/productos.json')
             // Seleccionar todos los botones con href="#comprar"
             const botonesComprar = document.querySelectorAll('a[href="#comprar"]');
             
-            botonesComprar.forEach((boton, index) => {
-                boton.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    const producto = productos[index];
+            // Añadimos el evento click al botón
+            comprarBtn.addEventListener('click', (event) => {
+                event.preventDefault(); // Evitar el comportamiento por defecto
+                mostrarNotificacion(`${producto.nombre} ha sido agregado al carrito`);
+                
+                // Guardar en localStorage
+                guardarEnCarrito(producto);
 
-                    // Guardar en localStorage
-                    guardarEnCarrito(producto);
-
-                    mostrarNotificacion(`${producto.nombre} ha sido agregado al carrito`);
-                });
+                mostrarNotificacion(`${producto.nombre} ha sido agregado al carrito`);
+            
             });
-
-
         });
     })
     .catch(error => console.error('Error al cargar los productos:', error));
