@@ -69,7 +69,7 @@ fetch('db/productos.json')
             container.appendChild(productoElement);
 
             // Seleccionar todos los botones con href="#comprar"
-            const botonesComprar = document.querySelectorAll('a[href="#comprar"]');
+            const comprarBtn = document.querySelectorAll('a[href="#comprar"]');
             
             // Añadimos el evento click al botón
             comprarBtn.addEventListener('click', (event) => {
