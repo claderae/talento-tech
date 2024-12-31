@@ -1,6 +1,69 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const navHeader = document.querySelector('.nav-header');
 
+// Selección del carrito y la modal
+const carritoIcon = document.querySelector('a[href="#carrito"]');
+const modal = document.querySelector('#modal-carrito');
+const closeModal = document.querySelector('.close-modal');
+const modalBody = document.querySelector('.modal-body');
+const totalGeneralElement = document.querySelector('.total-general');
+
+// Abrir la modal
+carritoIcon.addEventListener('click', (event) => {
+    event.preventDefault();
+    mostrarResumenCarrito();
+    modal.style.display = 'block';
+});
+
+// Cerrar la modal
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// Mostrar el resumen del carrito
+function mostrarResumenCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const resumen = {};
+
+    // Agrupar productos
+    carrito.forEach((producto) => {
+        if (resumen[producto.nombre]) {
+            resumen[producto.nombre].cantidad += 1;
+            resumen[producto.nombre].subtotal += producto.precio;
+        } else {
+            resumen[producto.nombre] = {
+                nombre: producto.nombre,
+                cantidad: 1,
+                subtotal: producto.precio,
+            };
+        }
+    });
+
+    // Generar filas de la tabla
+    let totalGeneral = 0;
+    modalBody.innerHTML = ''; // Limpiar contenido previo
+    for (const [nombre, detalles] of Object.entries(resumen)) {
+        const fila = `
+            <tr>
+                <td>${detalles.nombre}</td>
+                <td>${detalles.cantidad}</td>
+                <td>${detalles.subtotal} ARS</td>
+            </tr>
+        `;
+        modalBody.innerHTML += fila;
+        totalGeneral += detalles.subtotal;
+    }
+
+    // Actualizar el total general
+    totalGeneralElement.textContent = `${totalGeneral} ARS`;
+}
+
 // Verificar si los elementos existen
 if (menuToggle && navHeader) {
     menuToggle.addEventListener('click', () => {
